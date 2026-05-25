@@ -27,7 +27,7 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 ### 1. Searched the `DeviceFileEvents` Table
 
-Searched for any file that had the string "tor" in it and discovered what looks like the user "employee" downloaded a TOR installer, did something that resulted in many TOR-related files being copied to the desktop, and the creation of a file called `tor-shopping-list.txt` on the desktop at `2026-05-25T12:23:22.6131735Z`. These events began at `2026-05-25T12:03:18.492909Z`.
+Searched for any file that had the string "tor" in it and discovered what looks like the user "frank-vm" downloaded a TOR installer, did something that resulted in many TOR-related files being copied to the desktop, and the creation of a file called `tor-shopping-list.txt` on the desktop at `2026-05-25T12:23:22.6131735Z`. These events began at `2026-05-25T12:03:18.492909Z`.
 
 **Query used to locate events:**
 
@@ -48,7 +48,7 @@ DeviceFileEvents
 
 ### 2. Searched the `DeviceProcessEvents` Table
 
-Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-15.0.14.exe". Based on the logs returned, at `2026-05-25T12:08:27.8857912Z`, an employee on the "threat-hunt-lab" device ran the file `tor-browser-windows-x86_64-portable-15.0.14.exe` from their Downloads folder, using a command that triggered a silent installation.
+Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-15.0.14.exe". Based on the logs returned, at `2026-05-25T12:08:27.8857912Z`, an employee on the "frank-vm" device ran the file `tor-browser-windows-x86_64-portable-15.0.14.exe` from their Downloads folder, using a command that triggered a silent installation.
 
 **Query used to locate event:**
 
@@ -66,7 +66,7 @@ DeviceProcessEvents
 
 ### 3. Searched the `DeviceProcessEvents` Table for TOR Browser Execution
 
-Searched for any indication that user "employee" actually opened the TOR browser. There was evidence that they did open it at `2026-05-25T12:09:09.6927674Z`. There were several other instances of `firefox.exe` (TOR) as well as `tor.exe` spawned afterwards.
+Searched for any indication that user "frank-vm" actually opened the TOR browser. There was evidence that they did open it at `2026-05-25T12:09:09.6927674Z`. There were several other instances of `firefox.exe` (TOR) as well as `tor.exe` spawned afterwards.
 
 **Query used to locate events:**
 
@@ -129,7 +129,7 @@ DeviceNetworkEvents
 ### 4. Network Connection - TOR Network
 
 - **Timestamp:** `2026-05-25T12:09:09.6927674Z`
-- **Event:** A network connection to IP `80.58.53.213` on port `9001` by user "employee" was established using `tor.exe`, confirming TOR browser network activity.
+- **Event:** A network connection to IP `80.58.53.213` on port `9001` by user "frank-vm" was established using `tor.exe`, confirming TOR browser network activity.
 - **Action:** Connection success.
 - **Process:** `tor.exe`
 - **File Path:** `c:\users\frank-vm\desktop\tor browser\browser\torbrowser\tor\tor.exe`
